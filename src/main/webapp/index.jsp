@@ -8,7 +8,7 @@ String version=resource.getString("version");%>
 <body>
 <h2>War file deployed into amazon EC2 instance using github 
 "Successfully for the first project using Maven"</h2>
- <h3>First CICD project completed for March batch by using MBP concept in jenkins</h3>
+ <h3>First CICD project completed for Sep batch by using MBP concept in jenkins</h3>
  <h4>Done</h4>
  </body>
 </html>

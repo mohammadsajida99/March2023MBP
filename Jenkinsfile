@@ -1,27 +1,35 @@
 pipeline {
-    agent any
-    stages {
-        stage('Build Code') {
-            steps {
-                sh """
-                echo "Building Artifact for project samplewebapp"
-                """
-            }
-        }
-        stage('Reading branch wise') {
-            when {
-                branch "feauture**"
-            }
-            steps {
-                echo "It is only for Feauture branch information"
-            }
-        }
-        stage('Deploy Code') {
-            steps {
-                sh """
-                echo "Deploying Code"
-                """
-            }
-        }
-    }
-}
+   agent any
+   stages {
+       stage('Build Code11') {
+           steps {
+               sh "mvn clean package"
+               echo "Building Artifact for project"
+               
+           }
+       }
+       stage('Reading branch wise')
+       {
+       when
+       {
+       branch "feauture*"
+       }
+       steps
+       {
+       echo " It is only for Feauture branch"
+       }
+       }
+
+       stage('Deploy Code') {
+	   when
+	   {
+	   branch "master"
+	   	   }
+          steps {
+               sh "mvn tomcat7:deploy"
+               echo "Deploying Code"
+               
+          }
+      }
+      }
+      }
