@@ -13,7 +13,7 @@ pipeline {
                 branch "feauture**"
             }
             steps {
-                echo "It is only for Feauture branch"
+                echo "It is only for Feauture branch information"
             }
         }
         stage('Deploy Code') {
